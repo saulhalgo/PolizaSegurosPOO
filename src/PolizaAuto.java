@@ -1,4 +1,4 @@
-public class PolizaAuto extends Poliza {
+public class PolizaAuto extends Poliza implements Promocionable {
 
     int anioModelo;
 
@@ -18,5 +18,11 @@ public class PolizaAuto extends Poliza {
             montoFinal+=200.00;
         }
         return montoFinal;
+    }
+
+    @Override
+    public void aplicardescuentoBuenConductor() {
+        this.montoBase*=0.90;
+        System.out.println("Descuento aplicado por no tener choques ");
     }
 }
